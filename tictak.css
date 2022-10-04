@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap');
+*>*{
+    box-sizing: border-box;
+    font-family: 'Poppons',sans-serif;
+}
+:root{
+    --text-light: beige;
+    --text-dark: rgb(54,54,54);
+    --text-yellow: yellowgreen;
+    --text-btn:#816df2;
+    --text-selected:#34D399;
+    --cell-size: 100px;
+
+}
+body{
+    background-color: rgb(54 54 54);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.text{
+    color:beige;
+    padding: 10px;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.primary-btn{
+   padding: 10px 20px;
+   border: none;
+   background-color: #816df2;
+   color:beige;
+   border-radius: 10px;
+   margin-top: 2em;
+   cursor: pointer;
+   
+}
+.text-light{
+    color: var(--text-light);
+
+}
+.text-yellow{
+    color: var(--text-yellow);
+}
+.text-center{
+    text-align: center;
+}
+
+.primary-btn:hover {
+    background-color: yellowgreen;
+}
+.id:hover{
+    cursor: pointer;
+    background-color:yellowgreen   ;
+
+}
+.start-game{
+    display:none;
+}
+
+/*main game board*/
+#board{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    background-color:  beige;
+    row-gap: 3px;
+    column-gap: 3px;
+
+}
+.block{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(54 54 54);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+}
+/* when already you have dont add another*/
+.block.a,.block.b,.block.c,.block.d{
+    cursor: not-allowed;
+}
+
+
+.board.a .block:not(.a):not(.b):hover{
+    background: url('./as/f1.png') yellowgreen no-repeat;
+    opacity: 0.4;
+
+} /* not will not have hover on already selected*/
+
+.board.b .block:not(.c):not(.d):hover{
+    background: url('./as/f2.png') yellowgreen no-repeat;
+    opacity: 0.4;
+
+}
+.board.c .block:not(.b):not(.a):hover{
+    background: url('./as/m1.png') #816df2 no-repeat;
+    opacity: 0.4;
+
+}
+.board.d .block:not(.d):not(.c):hover{
+    background: url('./as/m2.png') #816df2 no-repeat;
+    opacity: 0.4;
+ 
+}
+/* .board.x .block:not(.a):not(.b):hover{
+    background: url('./as/f1.png') yellowgreen no-repeat;
+    opacity: 0.4;
+
+} 
+.board.x .block:not(.c):not(.d):hover{
+    background: url('./as/f2.png') yellowgreen no-repeat;
+    opacity: 0.4;
+
+}
+.board.x .block:not(.b):not(.a):hover{
+    background: url('./as/m1.png') #816df2 no-repeat;
+    opacity: 0.4;
+
+}
+.board.x .block:not(.d):not(.c):hover{
+    background: url('./as/m2.png') #816df2 no-repeat;
+    opacity: 0.4;
+} */
+.block.a{
+    background: url('./as/f1.png') yellowgreen no-repeat;
+    background-size: cover;
+}
+.block.b{
+    background: url('./as/f2.png') yellowgreen no-repeat;
+    background-size: cover;
+}
+.block.c{
+    background: url('./as/m1.png') #816df2 no-repeat;
+    background-size: cover;
+}
+.block.d{
+    background: url('./as/m2.png') #816df2 no-repeat;
+    background-size: cover;
+}
+/*Draw and Winner Msg*/
+
+.start-game,.draw-msg,.winner-msg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(49,49,49,0.938);
+
+
+}
+.draw-msg,.winner-msg{
+    display:none;
+}
+.draw-msg.show,.winner-msg.show{
+    display: flex;
+
+}
+.start-game .profile .img > img.selected{
+    background-color: #34D399;
+    border: 2px solid beige;
+    border-radius: 20px;
+}
+.hide{
+    display: none;
+}
+.win{
+    background-color: var(--text-selected)!important;
+}
