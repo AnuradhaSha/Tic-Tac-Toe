@@ -130,7 +130,7 @@ const WIN_COMBINATIONS=[
    [6,7,8],
    [0,3,6],//vertical
    [1,4,7],
-   [2,4,8],//daigonal check
+   [2,4,6],//daigonal check
    [0,4,8]
    
 ];
